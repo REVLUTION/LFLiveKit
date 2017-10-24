@@ -68,27 +68,6 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /** The preView will show OpenGL ES view*/
 @property (nonatomic, strong, null_resettable) UIView *preView;
 
-/** The captureDevicePosition control camraPosition ,default front*/
-@property (nonatomic, assign) AVCaptureDevicePosition captureDevicePosition;
-
-/** The beautyFace control capture shader filter empty or beautiy */
-@property (nonatomic, assign) BOOL beautyFace;
-
-/** The beautyLevel control beautyFace Level. Default is 0.5, between 0.0 ~ 1.0 */
-@property (nonatomic, assign) CGFloat beautyLevel;
-
-/** The brightLevel control brightness Level, Default is 0.5, between 0.0 ~ 1.0 */
-@property (nonatomic, assign) CGFloat brightLevel;
-
-/** The torch control camera zoom scale default 1.0, between 1.0 ~ 3.0 */
-@property (nonatomic, assign) CGFloat zoomScale;
-
-/** The torch control capture flash is on or off */
-@property (nonatomic, assign) BOOL torch;
-
-/** The mirror control mirror of front camera is on or off */
-@property (nonatomic, assign) BOOL mirror;
-
 /** The muted control callbackAudioData,muted will memset 0.*/
 @property (nonatomic, assign) BOOL muted;
 
@@ -121,18 +100,12 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /* The currentImage is videoCapture shot */
 @property (nonatomic, strong,readonly ,nullable) UIImage *currentImage;
 
-/* The saveLocalVideo is save the local video */
-@property (nonatomic, assign) BOOL saveLocalVideo;
-
-/* The saveLocalVideoPath is save the local video  path */
-@property (nonatomic, strong, nullable) NSURL *saveLocalVideoPath;
-
 #pragma mark - Initializer
 ///=============================================================================
 /// @name Initializer
 ///=============================================================================
-- (nullable instancetype)init UNAVAILABLE_ATTRIBUTE;
-+ (nullable instancetype)new UNAVAILABLE_ATTRIBUTE;
+- (nonnull instancetype)init UNAVAILABLE_ATTRIBUTE;
++ (nonnull instancetype)new UNAVAILABLE_ATTRIBUTE;
 
 /**
    The designated initializer. Multiple instances with the same configuration will make the
